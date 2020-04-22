@@ -1,12 +1,38 @@
-= E2E-Tests
+= Twitter Cypress Test Suite
 
-Run the tests with:
+Caution!!! This repo is only an example for how to use cypress.
+The automation most likely does not conform to Twitters Terms of Use.
+Please do not execute it against Twitter!
 
-```bash
-npm test
+== Prerequisites
+You may only execute the cypress tests against the english version of Twitter,
+because there is no simple way to determine the correct buttons to click,
+except by finding them based on their text.
+
+== The tests are self-documentary
+The cypress-cucumber-preprocessor is used in order to be able to write the tests
+in Gherkin.
+
+== Executing the tests
+You need some environment variables.
+
+* for the register.feature:
+```
+export CYPRESS_MAILSLURP_API_KEY=<YOUR_MAILSLURP_API_KEY>
 ```
 
-Or open the cypress:
+Example for executing the single features:
+
+```bash
+npm test -- -s cypress/integration/regsitration/register.feature
+```
+
+
+You may also use replace the `npm test` in the above examples with
+`npm run test:chrome` or `npm run test:firefox` in order to execute the test
+in the corresponding browser.
+
+Or open cypress and have a look at the tests and develop them further:
 
 ```
 npm run cypress:open
@@ -18,8 +44,8 @@ To run the tests without installing anything locally you may use docker-compose:
 $ docker-compose run e2e
 ```
 
-in container
+in the container you may export the environment variable and then execute the following:
 
 ```bash
-$ npm test
+$ npm run test:chrome
 ```
