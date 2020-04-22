@@ -1,0 +1,25 @@
+= E2E-Tests
+
+Run the tests with:
+
+```bash
+npm test
+```
+
+Or open the cypress:
+
+```
+npm run cypress:open
+```
+
+To run the tests without installing anything locally you may use docker-compose:
+
+```bash
+$ docker-compose run e2e
+```
+
+in container
+
+```bash
+$ npm test
+```

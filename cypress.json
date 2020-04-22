@@ -1,0 +1,10 @@
+{
+  "projectId": "twitter-cypress-test",
+  "baseUrl": "https://twitter.com",
+  "video": false,
+  "screenshotOnRunFailure": true,
+  "chromeWebSecurity": false,
+  "viewportHeight": 812,
+  "viewportWidth": 375,
+  "testFiles": "**/*.{feature,features}"
+}

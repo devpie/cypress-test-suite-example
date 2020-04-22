@@ -1,0 +1,22 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "interface-name": false,
+        "quotemark": [true, "single", "jsx-double"],
+        "semicolon": [true, "always", "strict-bound-class-methods"]
+    },
+    "rulesDirectory": [],
+    "linterOptions": {
+        "exclude": [
+            ".npm/**/*",
+            "cache/Cypress/**/*",
+            "coverage/**/*",
+            "node_modules/**/*",
+            "build/**/*"
+        ]
+    }
+}

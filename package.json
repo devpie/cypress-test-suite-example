@@ -1,0 +1,32 @@
+{
+  "name": "twitter-cypress-test-suite",
+  "version": "1.0.0",
+  "description": "Testing Twitter.com",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:verify": "cypress verify",
+    "test": "cypress run",
+    "test:chrome": "cypress run --browser chrome --headless",
+    "test:firefox": "cypress run --browser firefox --headless",
+    "lint": "tslint --project .",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "devDependencies": {
+    "@cypress/webpack-preprocessor": "5.1.2",
+    "@types/cypress-cucumber-preprocessor": "1.14.1",
+    "@types/node": "13.13.2",
+    "cypress": "4.4.1",
+    "cypress-cucumber-preprocessor": "2.3.1",
+    "expect": "25.4.0",
+    "find": "0.3.0",
+    "lodash": "4.17.15",
+    "mailslurp-client": "8.7.5",
+    "ts-loader": "7.0.1",
+    "tslint": "6.1.1",
+    "typescript": "3.8.3",
+    "webpack": "4.43.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+}

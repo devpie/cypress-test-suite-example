@@ -1,0 +1,22 @@
+# Mac OS Files
+.DS_Store
+.Trashes
+
+# Node
+logs
+*.log
+npm-debug.log*
+build/
+coverage/
+node_modules/
+.npm/
+
+# IDE
+.idea/
+*.iml
+.history/
+.vscode/
+
+#cypress
+cypress/videos
+cypress/screenshots
