@@ -10,8 +10,7 @@
 
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
-
-const webpack = require("@cypress/webpack-preprocessor");
+const webpack = require('@cypress/webpack-preprocessor');
 
 module.exports = on => {
   const options = {
