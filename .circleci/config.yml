@@ -5,7 +5,7 @@ workflows:
   build:
     jobs:
       - cypress/install:
-          install-command: 'yarn install'
+          yarn: true
       - cypress/run:
           requires:
             - cypress/install
