@@ -13,8 +13,37 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+import addContext from 'mochawesome/addContext';
 // Import commands.js using ES2015 syntax:
-import "./commands";
+import './commands';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+Cypress.on('test:after:run', (test, runnable) => {
+  console.log('Adding imageurl');
+  if (test.state === 'failed') {
+    console.log('Really adding imageUrl')
+    let item = runnable;
+    const nameParts = [runnable.title];
+
+    while (item.parent) {
+      nameParts.unshift(item.parent.title);
+      item = item.parent;
+    }
+
+    if (runnable.hookName) {
+      nameParts.push(`${runnable.hookName} hook`);
+    }
+
+    const fullTestName = nameParts
+      .filter(Boolean)
+      .join(' -- ');
+
+    const imageUrl = `screenshots/${
+      Cypress.spec.name
+    }/${fullTestName} (failed).png`;
+
+    addContext({test}, imageUrl);
+  }
+});

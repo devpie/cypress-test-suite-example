@@ -10,11 +10,12 @@
     "test:firefox": "cypress run --browser firefox --headless",
     "lint": "tslint --project .",
     "lint:fix": "yarn run lint -- --fix",
-    "pretest": "yarn run delete:reports",
-    "delete:reports": "rm -rf cypress/results cypress/reports cypress/screenshots || true",
-    "merge:reports": "mochawesome-merge 'cypress/results/json/*.json' > cypress/results/mochawesome.json",
-    "generate:html:report": "marge mochawesome.json --reportFilename index.html",
-    "generate:report": "yarn run merge:reports && yarn run generate:html:report"
+    "pretest": "yarn run report:delete",
+    "report:delete": "rm -rf cypress/results cypress/reports cypress/screenshots || true",
+    "report:merge": "mochawesome-merge 'cypress/results/json/*.json' > cypress/results/mochawesome.json",
+    "report:html": "marge cypress/results/mochawesome.json -o cypress/reports/html --reportFilename index.html",
+    "report:copyScreenshots": "cp -r cypress/screenshots cypress/reports/html/screenshots",
+    "report": "yarn run report:merge && yarn run report:html && yarn run report:copyScreenshots"
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "5.1.2",
