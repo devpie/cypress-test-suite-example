@@ -21,9 +21,7 @@ import './commands';
 // require('./commands')
 
 Cypress.on('test:after:run', (test, runnable) => {
-  console.log('Adding imageurl');
   if (test.state === 'failed') {
-    console.log('Really adding imageUrl')
     let item = runnable;
     const nameParts = [runnable.title];
 
