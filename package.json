@@ -9,7 +9,12 @@
     "test:chrome": "cypress run --browser chrome --headless",
     "test:firefox": "cypress run --browser firefox --headless",
     "lint": "tslint --project .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "yarn run lint -- --fix",
+    "pretest": "yarn run delete:reports",
+    "delete:reports": "rm -rf cypress/results cypress/reports cypress/screenshots || true",
+    "merge:reports": "mochawesome-merge 'cypress/results/json/*.json' > cypress/results/mochawesome.json",
+    "generate:html:report": "marge mochawesome.json --reportFilename index.html",
+    "generate:report": "yarn run merge:reports && yarn run generate:html:report"
   },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "5.1.2",
