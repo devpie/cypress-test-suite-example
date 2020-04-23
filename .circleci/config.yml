@@ -12,3 +12,9 @@ workflows:
           spec: cypress/integration/login/login.feature
           executor: cypress/browsers:node12.13.0-chrome80-ff74
           browser: chrome
+      - cypress/run:
+          requires:
+            - cypress/install
+          spec: cypress/integration/login/login.feature
+          executor: cypress/browsers:node12.13.0-chrome80-ff74
+          browser: firefox
