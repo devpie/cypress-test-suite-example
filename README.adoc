@@ -31,25 +31,25 @@ expost CYPRESS_LOGIN_FULL_NAME=<THE_DISPLAY_NAME_OF_THE_EXISTING_USER>
 Example for executing the single features:
 
 ```bash
-npm test -- -s cypress/integration/regsitration/register.feature
+yarn test -- -s cypress/integration/regsitration/register.feature
 ```
 
 ```bash
-npm test -- -s cypress/integration/login/login.feature
+yarn test -- -s cypress/integration/login/login.feature
 ```
 
 ```bash
-npm test -- -s cypress/integration/changeProfile/changeProfile.feature
+yarn test -- -s cypress/integration/changeProfile/changeProfile.feature
 ```
 
-You may also use replace the `npm test` in the above examples with
-`npm run test:chrome` or `npm run test:firefox` in order to execute the test
+You may also use replace the `yarn test` in the above examples with
+`yarn run test:chrome` or `yarn run test:firefox` in order to execute the test
 in the corresponding browser.
 
 Or open cypress and have a look at the tests and develop them further:
 
 ```
-npm run cypress:open
+yarn run cypress:open
 ```
 
 To run the tests without installing anything locally you may use docker-compose:
@@ -61,5 +61,5 @@ $ docker-compose run e2e
 in the container you have to export the environment variables from above and then run the following:
 
 ```bash
-$ npm run test:chrome
+$ yarn run test:chrome
 ```
