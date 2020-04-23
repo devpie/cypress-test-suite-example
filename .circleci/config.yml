@@ -12,9 +12,15 @@ workflows:
           spec: cypress/integration/login/login.feature
           executor: cypress/browsers-chrome78-ff70
           browser: chrome
+          post-steps:
+            - store_artifacts:
+                path: cypress/reports/html
       - cypress/run:
           requires:
             - cypress/install
           spec: cypress/integration/login/login.feature
           executor: cypress/browsers-chrome78-ff70
           browser: firefox
+          post-steps:
+            - store_artifacts:
+                path: cypress/reports/html
