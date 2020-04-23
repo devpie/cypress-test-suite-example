@@ -27,19 +27,22 @@
 // is true when a corner of the element is in the viewport
 
 const {MailSlurp} = require('mailslurp-client');
-const mailslurp = new MailSlurp({
-  apiKey: Cypress.env('MAILSLURP_API_KEY'),
-  fetchApi: window.fetch
-});
+
+const createMailSlurp = () => {
+  return new MailSlurp({
+    apiKey: Cypress.env('MAILSLURP_API_KEY'),
+    fetchApi: window.fetch
+  });
+};
 
 Cypress.Commands.add("newEmailAddress", () => {
-  return mailslurp.createInbox();
+  return createMailSlurp().createInbox();
 });
 
 Cypress.Commands.add("waitForLatestEmail",(inboxId) => {
-  return mailslurp.waitForLatestEmail(inboxId);
+  return createMailSlurp().waitForLatestEmail(inboxId);
 });
 
 Cypress.Commands.add('emptyInbox', (inboxId) => {
-  mailslurp.emptyInbox(inboxId);
+  createMailSlurp().emptyInbox(inboxId);
 });
