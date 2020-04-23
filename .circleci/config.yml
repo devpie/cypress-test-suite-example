@@ -7,7 +7,9 @@ workflows:
       - cypress/run:
           name: Test login with Chrome
           yarn: true
-          spec: cypress/integration/login/login.feature cypress/integration/changeProfile/changeProfile.feature
+          spec:
+            - cypress/integration/login/login.feature
+            - cypress/integration/changeProfile/changeProfile.feature
           executor: cypress/browsers-chrome78-ff70
           browser: chrome
           post-steps:
@@ -22,7 +24,9 @@ workflows:
             - Test login with Chrome
           name: Test login with Firefox
           yarn: true
-          spec: cypress/integration/login/login.feature cypress/integration/changeProfile/changeProfile.feature
+          spec:
+            - cypress/integration/login/login.feature
+            - cypress/integration/changeProfile/changeProfile.feature
           executor: cypress/browsers-chrome78-ff70
           browser: firefox
           post-steps:
