@@ -21,12 +21,26 @@ You need some environment variables.
 export CYPRESS_MAILSLURP_API_KEY=<YOUR_MAILSLURP_API_KEY>
 ```
 
+* For the other features:
+```
+export CYPRESS_LOGIN_USER=<EMAIL_ADDRESS_OF_EXISTING_USER>
+export CYPRESS_LOGIN_PASSWORD=<THE_PASSWORD_OF_THE_EXISTING_USER>
+expost CYPRESS_LOGIN_FULL_NAME=<THE_DISPLAY_NAME_OF_THE_EXISTING_USER>
+```
+
 Example for executing the single features:
 
 ```bash
 npm test -- -s cypress/integration/regsitration/register.feature
 ```
 
+```bash
+npm test -- -s cypress/integration/login/login.feature
+```
+
+```bash
+npm test -- -s cypress/integration/changeProfile/changeProfile.feature
+```
 
 You may also use replace the `npm test` in the above examples with
 `npm run test:chrome` or `npm run test:firefox` in order to execute the test
@@ -44,7 +58,7 @@ To run the tests without installing anything locally you may use docker-compose:
 $ docker-compose run e2e
 ```
 
-in the container you may export the environment variable and then execute the following:
+in the container you have to export the environment variables from above and then run the following:
 
 ```bash
 $ npm run test:chrome
