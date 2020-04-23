@@ -5,7 +5,7 @@ workflows:
   build:
     jobs:
       - cypress/install:
-          install-command: 'npm install --prefer-offline --no-audit'
+          install-command: 'yarn install'
       - cypress/run:
           requires:
             - cypress/install
