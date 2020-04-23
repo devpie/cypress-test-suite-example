@@ -1,6 +1,6 @@
 Feature: Change User Profile
 
-  Scenario:
+  Scenario: Change screen name and language
     Given a user is logged in
     When he goes to his account settings
     And changes his settings successfully to the following:
