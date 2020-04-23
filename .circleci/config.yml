@@ -4,9 +4,8 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install:
-          yarn: true
       - cypress/run:
+          name: Test login with Chrome
           requires:
             - cypress/install
           yarn: true
@@ -21,6 +20,7 @@ workflows:
             - store_artifacts:
                 path: cypress/reports/html
       - cypress/run:
+          name: Test login with Firefox
           requires:
             - cypress/install
           yarn: true
