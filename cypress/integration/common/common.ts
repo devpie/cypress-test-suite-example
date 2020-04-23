@@ -7,17 +7,17 @@ beforeEach(() => {
 });
 
 Given('a user opens twitter.com registration page', () => {
-  cy.visit('https://twitter.com/i/flow/signup');
+  cy.visit('/i/flow/signup');
   cy.wait(2000);
 });
 
 Given('a user opens twitter.com', () => {
-  cy.visit('https://twitter.com/explore');
+  cy.visit('/explore');
   cy.wait(2000);
 });
 
 Given('a user is logged in', () => {
-  cy.visit('https://twitter.com/login');
+  cy.visit('/login');
   supplyUsernameAndPassword();
   clickButton('Log in');
   isLoggedIn();
