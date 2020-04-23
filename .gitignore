@@ -20,3 +20,5 @@ node_modules/
 #cypress
 cypress/videos
 cypress/screenshots
+cypress/results
+cypress/reports

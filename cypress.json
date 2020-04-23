@@ -6,5 +6,12 @@
   "chromeWebSecurity": false,
   "viewportHeight": 812,
   "viewportWidth": 375,
-  "testFiles": "**/*.{feature,features}"
+  "testFiles": "**/*.{feature,features}",
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/results/json",
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
 }
