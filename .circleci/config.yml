@@ -18,6 +18,8 @@ workflows:
             - store_artifacts:
                 path: cypress/reports/html
       - cypress/run:
+          requires:
+            - Test login with Chrome
           name: Test login with Firefox
           yarn: true
           spec: cypress/integration/login/login.feature cypress/integration/changeProfile/changeProfile.feature
