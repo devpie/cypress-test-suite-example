@@ -25,7 +25,7 @@
     "cypress-cucumber-preprocessor": "2.3.1",
     "expect": "25.4.0",
     "find": "0.3.0",
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "mailslurp-client": "8.7.5",
     "mocha": "7.1.1",
     "mochawesome": "6.1.0",
